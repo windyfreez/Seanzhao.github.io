@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>窗户上的“冰花”是怎么来的？</title>
+    <style>
+        /* 页面样式：让网页适配手机，看起来更美观 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px; 
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 40px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+        /* 标题样式 */
+        .title {
+            text-align: center;
+            color: #1a73e8;
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            /* 新增动效：标题淡入+轻微放大 */
+            opacity: 0;
+            transform: scale(0.95);
+            animation: titleFade 1s ease forwards;
+        }
+        /* 图片样式 */
+        .img-box {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            /* 新增动效：图片滚动时渐入 */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        /* 文案样式 */
+        .text {
+            font-size: 24px;
+            color: #333;
+            line-height: 1.6;
+            margin: 15px 0;
+            /* 新增动效：文字滚动时滑动入场 */
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: all 0.8s ease;
+        }
+        .step-text {
+            font-size: 20px;
+            color: #666;
+            margin: 10px 0;
+            /* 新增动效：步骤文字滚动时滑动入场 */
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: all 0.8s ease;
+        }
+        /* 互动按钮样式 */
+        .upload-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 22px;
+            text-align: center;
+            margin: 30px 0;
+            cursor: pointer;
+            /* 新增动效：按钮hover反馈 */
+            transition: all 0.3s ease;
+        }
+        /* 新增动效：按钮hover时变色+放大 */
+        .upload-btn:hover {
+            background-color: #3367d6;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        }
+        /* 上传预览图样式 */
+        #preview {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
+            /* 新增动效：预览区hover时边框变色 */
+            transition: all 0.3s ease;
+        }
+        #preview:hover {
+            border-color: #4285f4;
+            color: #4285f4;
+        }
+        #preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        /* 新增：署名样式 */
+        .signature {
+            text-align: right;
+            font-size: 18px;
+            color: #999;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            /* 新增动效：署名滚动时淡入 */
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.8s ease;
+        }
+
+        /* 新增：动效关键帧定义 */
+        /* 标题淡入动画 */
+        @keyframes titleFade {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* 新增：滚动时触发元素显示 */
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) translateX(0) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1. 封面部分 -->
+        <h1 class="title">窗户上的“冰花”，从哪冒出来的呀？❄️</h1>
+        <img src="1.jpg" alt="冬日窗户结霜" class="img-box">
+
+        <!-- 2. 引言+原理步骤 -->
+        <p class="text">冬天早上起床，你有没有发现？<br>窗户上结了白白的霜花！<br>有的像小雪花，有的像小树枝，超可爱～<br>其实呀，这背后藏着超简单的物理小知识呢！😉</p>
+        
+        <img src="2.jpg" alt="空气中的水蒸气" class="img-box">
+        <p class="step-text">① 空气里藏着看不见的小水珠，就像小幽灵一样飘着～💧</p>
+        
+        <img src="3.jpg" alt="冷玻璃" class="img-box">
+        <p class="step-text">② 冬天超冷，窗户玻璃冻到0℃以下，手摸上去冰冰凉！❄️</p>
+        
+        <img src="4.jpg" alt="变成霜花" class="img-box">
+        <p class="step-text">③ 小水珠碰到冷玻璃，一下子变成小冰晶，堆在一起就是霜花啦！✨</p>
+
+        <!-- 3. 互动提问+图片上传 -->
+        <p class="text">你家窗户上的霜花，是什么形状的呀？<br>点击下面按钮，上传你的发现吧！📸</p>
+        
+        <!-- 上传按钮和预览区 -->
+        <input type="file" id="file-upload" style="display: none;" accept="image/*">
+        <button class="upload-btn" onclick="document.getElementById('file-upload').click()">上传我的霜花照片</button>
+        <div id="preview">未选择图片</div>
+
+        <!-- 4. 结尾部分 -->
+        <img src="5.jpg" alt="不同形状的霜花" class="img-box">
+        <p class="text">生活里的小现象，都藏着科学小秘密～<br>做个爱观察的小朋友，就能发现好多有趣的事儿哦！🌟</p>
+        
+        <!-- 新增：署名 -->
+        <div class="signature">制作：赵思月</div>
+    </div>
+
+    <!-- 互动功能代码：实现图片上传预览 -->
+    <script>
+        // 当选择图片后，在预览区显示
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const preview = document.getElementById('preview');
+                    preview.innerHTML = `<img src="${event.target.result}" alt="你的霜花照片">`;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 新增动效代码：滚动时触发元素显示（包含署名）
+        window.addEventListener('scroll', function() {
+            // 获取所有需要动效的元素（新增.signature类）
+            const animElements = document.querySelectorAll('.img-box, .text, .step-text, .signature');
+            animElements.forEach(element => {
+                // 计算元素顶部到可视区域顶部的距离
+                const elementTop = element.getBoundingClientRect().top;
+                // 当元素进入可视区域（距离顶部小于屏幕高度的80%）时，添加show类显示
+                if (elementTop < window.innerHeight * 0.8) {
+                    element.classList.add('show');
+                }
+            });
+        });
+
+        // 页面加载时触发一次滚动事件，确保顶部元素正常显示
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
