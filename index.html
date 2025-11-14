@@ -113,6 +113,27 @@
             object-fit: cover;
             border-radius: 8px;
         }
+
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 22px;
+            text-align: center;
+            margin: 40px 0 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        /* 返回按钮hover动效 */
+        .back-btn:hover {
+            background-color: #3367d6;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        }
         /* 新增：署名样式 */
         .signature {
             text-align: right;
@@ -172,6 +193,11 @@
         <img src="5.jpg" alt="不同形状的霜花" class="img-box">
         <p class="text">生活里的小现象，都藏着科学小秘密～<br>做个爱观察的小朋友，就能发现好多有趣的事儿哦！🌟</p>
         
+        <!-- 返回原网页按钮 -->
+        <button class="back-btn" onclick="window.location.href='winter-more.html'">
+            <span style="margin-right: 8px;">🔜</span> 探索更多冬日科普
+        </button>
+
         <!-- 新增：署名 -->
         <div class="signature">制作：赵思月</div>
     </div>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冬日科普合集 | 雪花、雾凇的小秘密</title>
+    <style>
+        /* 完全沿用原网页样式，保持视觉统一 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 40px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+        /* 标题样式（新增加载动效） */
+        .title {
+            text-align: center;
+            color: #1a73e8;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            opacity: 0;
+            transform: scale(0.95);
+            animation: titleFade 1s ease forwards;
+        }
+        /* 新增：子标题样式 */
+        .sub-title {
+            color: #4285f4;
+            font-size: 24px;
+            margin: 30px 0 15px 0;
+            padding-left: 15px;
+            border-left: 4px solid #4285f4;
+        }
+        /* 文案样式（保持统一） */
+        .text {
+            font-size: 22px;
+            color: #333;
+            line-height: 1.8;
+            margin: 15px 0;
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: all 0.8s ease;
+        }
+        /* 图片样式（统一圆角和动效） */
+        .img-box {
+            width: 100%;
+            border-radius: 15px;
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        /* 返回按钮样式（和上传按钮统一） */
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 22px;
+            text-align: center;
+            margin: 40px 0 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        /* 返回按钮hover动效 */
+        .back-btn:hover {
+            background-color: #3367d6;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        }
+        /* 署名样式（和原网页统一） */
+        .signature {
+            text-align: right;
+            font-size: 18px;
+            color: #999;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.8s ease;
+        }
+        /* 动效关键帧（和原网页一致） */
+        @keyframes titleFade {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) translateX(0) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 标题 -->
+        <h1 class="title">冬日科普合集 ❄️</h1>
+        
+        <!-- 1. 雪花的秘密 -->
+        <h2 class="sub-title">1. 雪花为什么都是六角形？</h2>
+        <img src="6.png" alt="六角形雪花" class="img-box">
+        <p class="text">水分子的结构超特别！当水蒸气凝结成冰时，水分子会按「正六边形」的规律排列～</p>
+        <p class="text">每片雪花在下落过程中，温度、湿度都不一样，所以没有两片雪花是完全相同的，是不是很神奇？</p>
+        
+        <!-- 2. 雾凇和霜花的区别 -->
+        <h2 class="sub-title">2. 雾凇vs霜花，不一样哦！</h2>
+        <img src="7.png" alt="雾凇景观" class="img-box">
+        <p class="text">💧 霜花：在窗户玻璃上形成，是室内水蒸气碰到冷玻璃直接凝结的；</p>
+        <p class="text">❄️ 雾凇：在户外树枝上形成，是空气中的雾气遇到0℃以下的物体，凝结成的白色冰晶，也叫“树挂”～</p>
+        
+        <!-- 3. 冬日“白气”是什么？ -->
+        <h2 class="sub-title">3. 冬天呼出的“白气”不是气！</h2>
+        <img src="8.png" alt="冬日白气" class="img-box">
+        <p class="text">我们嘴里呼出的是温暖的水蒸气，遇到冷空气后，会快速凝结成无数个微小的小水珠～</p>
+        <p class="text">这些小水珠聚集在一起，看起来就是白色的“气”，和霜花的形成原理是亲戚哦！</p>
+        
+        <!-- 返回原网页按钮 -->
+        <button class="back-btn" onclick="window.location.href='index.html'">
+            <span style="margin-right: 8px;">⬅️</span> 返回霜花科普主页
+        </button>
+        
+        <!-- 署名 -->
+        <div class="signature">制作：赵思月</div>
+    </div>
+
+    <!-- 新增：滚动加载动效（和原网页一致） -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const animElements = document.querySelectorAll('.img-box, .text, .sub-title, .signature');
+            animElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight * 0.8) {
+                    element.classList.add('show');
+                }
+            });
+        });
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
